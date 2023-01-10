@@ -1,5 +1,9 @@
 # MovieApp
 
+## Demo 
+
+https://movie-ia4weigdl-nikhilrajnair.vercel.app/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
