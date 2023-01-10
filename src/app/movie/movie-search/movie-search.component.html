@@ -1,0 +1,23 @@
+<form #simpleForm="ngForm">
+  <div class="row">
+    <div class="col-12 col-sm-9 col-md-10 movie-form-field">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput required name="title" [(ngModel)]="query" (keyup.enter)="getSearchResults()" minlength="3">
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-sm-3 col-md-2 text-center">
+      <button mat-raised-button class="full-width" color="primary" [disabled]="simpleForm.form.invalid" type="button"
+        (click)="getSearchResults()" class="w-100">
+        Search
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <app-movie-card *ngFor="let movie of movies$ | async" [movie]="movie"
+    class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+  </app-movie-card>
+</div>
