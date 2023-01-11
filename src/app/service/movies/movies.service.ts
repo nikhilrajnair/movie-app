@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MoviesService {
-  private readonly API_KEY = `157f9eb7`;
+  private readonly API_KEY = `8ea39b15`;
 
   constructor(private http: HttpClient) {}
 
@@ -19,8 +19,8 @@ export class MoviesService {
       .pipe(map((response: any) => response.Search));
   }
 
-  getMovieDetails(imdbId: string): Observable<any> {
-    return this.http.get(
+  getMovieDetails(imdbId: string): Observable<MovieDetail> {
+    return this.http.get<MovieDetail>(
       `https://www.omdbapi.com/?apikey=${this.API_KEY}&i=${imdbId}&plot=full`
     );
   }
